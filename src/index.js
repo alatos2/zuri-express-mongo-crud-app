@@ -10,7 +10,7 @@ const debug = Debug('app:server');
 
 dotenv.config();
 
-const { LIVE_DATABASE, USERNAME, PASSWORD, PORT } = process.env;
+const { LIVE_DATABASE, PASSWORD, PORT } = process.env;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -21,8 +21,8 @@ mongoose.connect(LIVE_DATABASE, {
         password: PASSWORD
     }
 }, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => console.log(chalk.green('Db Connected!!!')))
-.catch(err => console.log(chalk.red(err)))
+.then(() => debug(chalk.green('Db Connected!!!')))
+.catch(err => debug(chalk.red(err)))
 
 app.get('/', (req, res) => {
     res.end('Hello Buddy!');
@@ -30,4 +30,4 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/', routes);
 
-app.listen(PORT, () => console.log(chalk.green(`Server running on port ${PORT}`)));
+app.listen(PORT, () => debug(chalk.green(`Server running on port ${PORT}`)));
