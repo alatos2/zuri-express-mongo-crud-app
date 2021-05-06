@@ -7,7 +7,7 @@ Simple app to create, read, update and delete data from MongoDB
 * [About](#crud-app-with-mongodb)
 * [Required Features](#required-features)
 * [Heroku Deployment](#heroku-deployment)
-* [Routes Test with Postman](#swagger-documentation)
+* [Routes Test with Postman](#routes-test-with-postman)
 * [Acknowledgements](#acknowledgements)
 * [Author](#author)
 
